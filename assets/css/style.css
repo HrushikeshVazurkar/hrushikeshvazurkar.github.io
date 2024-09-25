@@ -296,7 +296,7 @@ li.logo span {
 
 h3 {
   font-weight: 200;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   margin-top: 0;
   padding: 30px 40px;
   text-transform: uppercase;
@@ -371,7 +371,7 @@ h3 {
 }
 
 .card {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .card .role {
@@ -568,7 +568,7 @@ small {
 
 @media (min-width: 1200px) {
   #experience .container {
-    width: 860px;
+    width: 100%;
   }
 }
 
