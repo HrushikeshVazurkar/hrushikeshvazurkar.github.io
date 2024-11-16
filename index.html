@@ -15,7 +15,6 @@
             <li><a href="#photos">My Journey</a></li>
             <li><a href="#experience">Academics & Work Experience</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -180,19 +179,58 @@
             <h2>Projects</h2>
             <div class="project-grid">
                 <div class="project">
-                    <h3>Public insurance data analysis for modelling Ombudsman decisions</h3>
+                    <h3>FOS Insurance Data Analysis</h3>
                     <br>
-                    <p>...</p>
+                    <div class="project-content">
+                        <p class="project-text">
+                            This project focused on analyzing publicly available insurance data, including Payment Protection Insurance (PPI), 
+                            from the Financial Ombudsman Service (FOS). The work began with downloading FOS complaint data (PDF files) via API, 
+                            processing it, and creating a structured dataset. Key achievements include uncovering temporal and insurance-specific patterns 
+                            of customer complaints through exploratory data analysis (EDA). Additionally, I developed a predictive model using Distil-BERT 
+                            with down-sampling techniques to replicate the FOS decisions for customer complaints, achieving an accuracy of 84%. 
+                            The project culminated in a detailed report, highlighting complaint spikes over time and proposing strategies for scrutinizing 
+                            insurance products based on both the likelihood of complaints being upheld and model predictions. This end-to-end workflow demonstrated 
+                            expertise in data processing, advanced machine learning, and strategic analysis for actionable insights.
+                        </p>
+                        <span class="read-more-toggle">...Read more</span>
+                        <div class="project-links">
+                            <a href="https://github.com/HrushikeshVazurkar/Dissertation-1" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-file-alt"></i> View Report</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="project">
                     <h3>Unsupervised time-series data analysis</h3>
                     <br>
-                    <p>...</p>
+                    <div class="project-content">
+                        <p class="project-text">
+                            This project involved developing an unsupervised model to identify risky transactions from an hourly time-series dataset of 
+                            employee spending for Lloyd’s Bank. The process began with exploratory data analysis (EDA) and time-series diagnostic tests to 
+                            validate attributes such as inter-employee correlation and autocorrelation, aiding in feature engineering and model selection. 
+                            Using the Isolation Forest algorithm, the model achieved optimal results, with F1 scores of 0.94 for identifying non-risky events 
+                            and 0.23 for risky transactions. This project demonstrated strong skills in unsupervised learning, time-series analysis, and anomaly 
+                            detection to provide actionable insights for risk management.
+                        </p>
+                        <span class="read-more-toggle">...Read more</span>
+                        <div class="project-links">
+                            <a href="https://github.com/HrushikeshVazurkar/Dissertation-2" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-file-alt"></i> View Report</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="project">
                     <h3>Space Intelligence Hackathon</h3>
                     <br>
-                    <p>I participated in a hackathon by a startup called Space Intelligence. During the course of 1-week, we performed analysis on geospatial data (GLanCE dataset and Landsat-8) for Bolivia to quantify the drivers of deforestation and influence policy change regarding potential land prime for reforestation.</p>
+                    <div class="project-content">
+                        <p class="project-text">
+                            I participated in a hackathon by a startup called Space Intelligence. During the course of 1-week, we performed analysis on geospatial data 
+                            (GLanCE dataset and Landsat-8) for Bolivia to quantify the drivers of deforestation and influence policy change regarding potential land prime for reforestation.
+                        </p>
+                        <span class="read-more-toggle">...Read more</span>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-file-alt"></i> View Reference</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -249,6 +287,63 @@
         </div>
     </footer>
 
-    <script type="module" src="/main.js"></script>
+    <script>
+        // Initialize typing animation
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scroll for navigation links
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault()
+                    const targetId = this.getAttribute('href')
+                    const targetSection = document.querySelector(targetId)
+                    targetSection.scrollIntoView({ behavior: 'smooth' })
+                })
+            })
+
+            // Optional: Add scroll-based active state for nav items
+            const sections = document.querySelectorAll('.section')
+            const navLinks = document.querySelectorAll('nav a')
+
+            window.addEventListener('scroll', () => {
+                let current = ''
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop
+                    const sectionHeight = section.clientHeight
+                    if (scrollY >= sectionTop - 100) {
+                        current = section.getAttribute('id')
+                    }
+                })
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active')
+                    if (link.getAttribute('href').slice(1) === current) {
+                        link.classList.add('active')
+                    }
+                })
+            })
+        })
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const projects = document.querySelectorAll('.project');
+
+            projects.forEach(project => {
+                const text = project.querySelector('.project-text');
+                const toggle = project.querySelector('.read-more-toggle');
+                
+                // Initially collapse all project texts
+                text.classList.add('collapsed');
+                
+                toggle.addEventListener('click', function() {
+                    text.classList.toggle('collapsed');
+                    
+                    if (text.classList.contains('collapsed')) {
+                        toggle.textContent = '...Read more';
+                    } else {
+                        toggle.textContent = 'Show less';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
