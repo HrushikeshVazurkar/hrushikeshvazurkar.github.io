@@ -99,6 +99,31 @@
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-header">
+                            <img style="max-width: 100%; height: auto; display: block;" src="./images/bmt.png" alt="Bene Meat Technologies" class="company-logo">
+                            <div class="timeline-header-text">
+                                <div class="timeline-date">Nov 2024 - Present</div>
+                                <h3>Fullstack Developer - ML</h3>
+                                <h4>Bene Meat Technologies</h4>
+                            </div>
+                        </div>
+
+                        <ul>
+                            <li>Software Development for R&D – Worked with the Data Analysis Thematic Group to develop 
+                                and maintain software that supported scientists in cultured meat research for both pet 
+                                and human consumption.</li>
+                            <li>Dashboarding Tool Development – Designed and maintained a BI tool to visualize complex 
+                                experiments across multiple bioreactors, allowing scientists to monitor key parameters 
+                                like oxygen, CO₂ levels, and temperature.</li>
+                            <li>Data Collection & Management – Developed Python scripts for efficient scientific paper 
+                                retrieval using multithreading and AWS API Gateway; managed a metadata database with over 
+                                one million records.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
                             <img src="./images/uoe.png" alt="University of Edinburgh" class="company-logo">
                             <div class="timeline-header-text">
                                 <div class="timeline-date">Sep 2023 - Sep 2024</div>
@@ -243,7 +268,7 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <span>+44-7767941055</span>
+                        <span>+91-9021792771</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
@@ -251,17 +276,16 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Edinburgh, UK</span>
+                        <span>Navi Mumbai, India</span>
                     </div>
                 </div>
             </div>
             <div class="footer-section">
                 <h3>Connect</h3>
                 <div class="social-links">
-                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/HrushikeshVazurkar" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/hrushikesh-vazurkar/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com/HVazurkar" class="social-icon"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
             <div class="footer-section">
@@ -283,11 +307,13 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Hrushikesh Vazurkar. All rights reserved.</p>
+            <p>&copy; <span id="year"></span> Hrushikesh Vazurkar. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+
         // Initialize typing animation
         document.addEventListener('DOMContentLoaded', () => {
             // Smooth scroll for navigation links
